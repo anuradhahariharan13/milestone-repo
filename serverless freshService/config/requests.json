@@ -1,0 +1,15 @@
+{
+  "createFreshdeskTicket": {
+    "schema": {
+      "protocol": "https",
+      "host": "effy-opinyin.freshdesk.com",
+      "path": "/api/v2/tickets",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Basic <%= encode(iparam.api_key + ':X') %>",
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {} 
+  }
+}
