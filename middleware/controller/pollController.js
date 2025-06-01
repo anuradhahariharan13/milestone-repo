@@ -20,6 +20,7 @@ let lastChecked = new Date().toISOString();
 
       lastChecked = latestUpdated;
     }
+    lastChecked=new Date().toISOString();
 
    
 
