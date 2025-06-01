@@ -11,18 +11,7 @@ let lastChecked = new Date().toISOString();
     for (const ticket of tickets) {
       await addTicket(ticket);
     }
-
-    if (tickets.length) {
-      const latestUpdated = tickets
-        .map(t => new Date(t.updated_at))
-        .sort((a, b) => b - a)[0]
-        .toISOString();
-
-      lastChecked = latestUpdated;
-    }
-    lastChecked=new Date().toISOString();
-
-   
+    
 
     console.log("getting tickets");
   } catch (error) {
