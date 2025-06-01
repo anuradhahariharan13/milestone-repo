@@ -21,9 +21,7 @@ let lastChecked = new Date().toISOString();
       lastChecked = latestUpdated;
     }
 
-    if (tickets.length) {
-      lastChecked = new Date().toISOString(); 
-    }
+   
 
     console.log("getting tickets");
   } catch (error) {
