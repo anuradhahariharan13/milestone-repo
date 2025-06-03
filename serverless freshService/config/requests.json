@@ -11,5 +11,18 @@
       }
     },
     "options": {} 
-  }
+  },
+  "sendFreshServiceTicket": {
+    "schema": {
+    "protocol": "https",
+    "host": "a815-14-140-167-46.ngrok-free.app",
+    "path": "/getTicket",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "options": {}
+}
+
 }
