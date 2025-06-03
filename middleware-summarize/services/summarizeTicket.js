@@ -2,7 +2,7 @@ const axios =require('axios');
 const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config.json')[env];
 
-const HUGGINGFACE_API_URL = 'https://api-inference.huggingface.co/models/sshleifer/distilbart-cnn-12-6';
+const HUGGINGFACE_API_URL = config.HUGGINGFACE_API_URL
 const HUGGINGFACE_API_TOKEN =config.HUGGINGFACE_TOKEN;
 
 async function summarizeTicketText(text) {
