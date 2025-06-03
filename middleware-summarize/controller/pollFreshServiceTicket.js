@@ -1,5 +1,5 @@
-import { fetchUpdatedTickets } from '../service/freshservice.js';
-import { addTicket } from '../utils/helper.js';
+const fetchUpdatedTickets =require('../services/freshservice.js');
+const addTicket=require('../repositories/ticketRepository.js');
 
 let lastChecked = new Date().toISOString();
 
@@ -11,11 +11,14 @@ let lastChecked = new Date().toISOString();
     for (const ticket of tickets) {
       await addTicket(ticket);
     }
-    
+
+    if (tickets.length) {
+      lastChecked = new Date().toISOString(); 
+    }
 
     console.log("getting tickets");
   } catch (error) {
     console.error('Error polling Freshservice:', error.response?.data || error.message);
   }
 }
-export default pollFreshservice;
+module.export= pollFreshservice;

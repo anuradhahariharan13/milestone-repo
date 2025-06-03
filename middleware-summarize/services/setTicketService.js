@@ -1,5 +1,6 @@
-import axios from 'axios';
-import config from '../configs/env.js';
+const axios =require('axios');
+const env = process.env.NODE_ENV || 'development';
+const config = require('../config/config.json')[env];
 
 const allowedTypes = [
   "incident", "Problem", "Request", "Question", "Service Task",
@@ -29,4 +30,4 @@ async function pushTicket(ticket) {
   });
 }
 
-export default pushTicket;
+module.export= pushTicket;

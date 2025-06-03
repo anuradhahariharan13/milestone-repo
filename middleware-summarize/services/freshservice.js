@@ -1,7 +1,8 @@
-import axios from 'axios';
-import config from '../configs/env.js';
+const axios=require('axios');
+const env = process.env.NODE_ENV || 'development';
+const config = require('../config/config.json')[env];
 
-export async function fetchUpdatedTickets(since) {
+async function fetchUpdatedTickets(since) {
  const encodedSince = encodeURIComponent(since); 
   const url = `https://${config.FRESHSERVICE_DOMAIN}.freshservice.com/api/v2/tickets?updated_since=${encodedSince}`;
 
@@ -13,4 +14,4 @@ export async function fetchUpdatedTickets(since) {
 
   return res.data.tickets || [];
 }
-export default fetchUpdatedTickets
+module.export=fetchUpdatedTickets

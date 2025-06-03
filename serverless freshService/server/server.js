@@ -19,7 +19,6 @@ function getValidStatus(status) {
 exports = {
   onTicketCreateHandler: async function (args) {
     const data = args.data;
-
     const ticket = {
       subject: data.ticket.subject || "No subject provided",
       description: data.ticket.description || "No description provided",
@@ -29,16 +28,31 @@ exports = {
       type: getValidType(data.ticket.type_name)
     };
 
-    try {
-      await $request.invokeTemplate("createFreshdeskTicket", {
-        iparam: {
-          api_key: args.iparams.api_key
-        },
-        body: JSON.stringify(ticket)
+  let responseData;
+ try {
+  const response = await $request.invokeTemplate("createFreshdeskTicket", {
+    iparam: {
+      api_key: args.iparams.api_key
+    },
+    body: JSON.stringify(ticket)
+  });
+  responseData = JSON.parse(response.response);
+  console.log(responseData);
+  let freshdeskId = responseData.id;
+  console.log("Freshdesk ticket created successfully. ID:", freshdeskId);
+} catch (error) {
+  console.error("Error creating Freshdesk ticket:", error);
+}
+
+  
+
+try {
+      await $request.invokeTemplate("sendFreshServiceTicket", {
+        body: JSON.stringify(responseData)
       });
-      console.log("Freshdesk ticket created successfully.");
+      console.log("freshservice ticket sent successfully.");
     } catch (error) {
-      console.error("Error creating Freshdesk ticket:", error);
+      console.error("Error sending freshService ticket:", error);
     }
   }
 };

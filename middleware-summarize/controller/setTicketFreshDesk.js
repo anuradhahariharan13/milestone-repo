@@ -1,5 +1,5 @@
-import { getTickets, clearTickets } from '../utils/helper.js';
-import pushTicket from '../service/setTicketService.js'; 
+const { getTickets, clearTickets } =require ('../repositories/ticketRepository.js');
+const pushTicket=require ('../services/setTicketService.js'); 
 
 
 async function pushToFreshdeskController() {
@@ -17,4 +17,4 @@ async function pushToFreshdeskController() {
   }
 }
 
-export default pushToFreshdeskController;
+module.export= pushToFreshdeskController;

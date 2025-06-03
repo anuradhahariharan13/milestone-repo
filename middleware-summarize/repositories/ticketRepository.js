@@ -1,4 +1,4 @@
-import Ticket from '../models/ticketModel.js';
+const Ticket =require('../models/ticketModel');
 
 async function addTicket(ticket) {
   try {
@@ -30,5 +30,5 @@ async function clearTickets() {
   await Ticket.deleteMany({});
 }
 
-export {addTicket,getTickets,clearTickets};
+module.export= {addTicket,getTickets,clearTickets};
 
