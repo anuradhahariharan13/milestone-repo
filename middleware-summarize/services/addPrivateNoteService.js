@@ -2,7 +2,7 @@ const axios = require('axios');
 const config = require('../config/config.json').development;
 
 async function addPrivateNoteToFreshserviceTicket(ticketId, summary) {
-  const url = `https://${config.FRESHDESK_DOMAIN}.freshdesk.com/api/v2/tickets/${ticketId}/notes`;
+  const url = `https://${config.FRESHDESK_DOMAIN}.freshdesk.com/api/v2/tickets/1524/notes`;
 
   try {
     await axios.post(
@@ -19,7 +19,7 @@ async function addPrivateNoteToFreshserviceTicket(ticketId, summary) {
       }
     );
 
-    console.log(` Private note added to Freshservice ticket ${ticketId}`);
+    console.log(` Private note added to Freshdesk ticket ${ticketId}`);
   } catch (error) {
     console.error(` Failed to add note to ticket ${ticketId}:`, error.response?.data || error.message);
     throw error;

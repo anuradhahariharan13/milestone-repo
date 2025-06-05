@@ -1,7 +1,6 @@
 const express = require('express');
 const pollFreshservice= require('../controller/pollFreshServiceTicket.js');
 const pushToFreshdeskController =require('../controller/setTicketFreshDesk.js');
-const summarizeTicketText= require('../services/summarizeTicket.js')
 const {handleTicketSummary} =require ('../controller/ticketSummaryController.js');
 
 const defaultRouter = express.Router();

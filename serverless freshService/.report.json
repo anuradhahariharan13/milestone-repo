@@ -2,7 +2,7 @@
   "lints": [
     {
       "severity": 1,
-      "value": "server/server.js::38: 'freshdeskId' is never reassigned. Use 'const' instead.",
+      "value": "server/server.js::41: 'freshdeskId' is never reassigned. Use 'const' instead.",
       "type": "lint"
     }
   ],
@@ -572,7 +572,7 @@
         "15": null,
         "16": null,
         "17": null,
-        "18": 0
+        "18": 13
       },
       "f": {
         "0": null,
@@ -582,31 +582,31 @@
       },
       "b": {
         "0": [
-          null,
+          56,
           0
         ],
         "1": [
-          null,
+          56,
           0
         ],
         "2": [
-          null,
+          56,
           0
         ],
         "3": [
-          null,
+          56,
           0
         ],
         "4": [
-          null,
+          56,
           0
         ],
         "5": [
-          null,
+          56,
           0
         ],
         "6": [
-          null,
+          56,
           0
         ]
       },
@@ -617,21 +617,21 @@
   "coverageSummary": {
     "lines": {
       "total": 19,
-      "covered": 17,
+      "covered": 1,
       "skipped": 0,
-      "pct": 89.47
+      "pct": 5.26
     },
     "statements": {
       "total": 19,
-      "covered": 17,
+      "covered": 1,
       "skipped": 0,
-      "pct": 89.47
+      "pct": 5.26
     },
     "functions": {
       "total": 4,
-      "covered": 4,
+      "covered": 0,
       "skipped": 0,
-      "pct": 100
+      "pct": 0
     },
     "branches": {
       "total": 14,

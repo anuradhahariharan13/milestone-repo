@@ -8,8 +8,19 @@ const HUGGINGFACE_API_TOKEN =config.HUGGINGFACE_TOKEN;
 async function summarizeTicketText(text) {
   try {
     const response = await axios.post(
-      HUGGINGFACE_API_URL,
-      { inputs: text },
+       HUGGINGFACE_API_URL,
+      {
+        inputs: text,
+        parameters: {
+          max_new_tokens: 1000,
+          min_length: 200,
+          temperature: 0.4,
+          top_p: 0.9,
+          repetition_penalty: 1.3,
+          num_beams: 4,
+          early_stopping: true
+        }
+      },
       {
         headers: {
           Authorization: `Bearer ${HUGGINGFACE_API_TOKEN}`,

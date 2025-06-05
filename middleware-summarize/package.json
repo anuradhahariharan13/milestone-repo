@@ -31,6 +31,9 @@
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^8.15.1",
     "nodemailer": "^4.6.4",
-    "request": "^2.85.0"
+    "pdf-parse": "^1.1.1",
+    "request": "^2.85.0",
+    "tesseract.js": "^6.0.1",
+    "textract": "^2.5.0"
   }
 }

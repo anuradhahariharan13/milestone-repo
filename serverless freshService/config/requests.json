@@ -15,7 +15,7 @@
   "sendFreshServiceTicket": {
     "schema": {
     "protocol": "https",
-    "host": "a815-14-140-167-46.ngrok-free.app",
+    "host": "cac8-27-5-182-67.ngrok-free.app",
     "path": "/getTicket",
     "method": "POST",
     "headers": {
